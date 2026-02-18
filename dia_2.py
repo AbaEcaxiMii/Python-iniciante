@@ -1,4 +1,8 @@
+##1005
 print("Hello World")
-##poder teste
-print("AAAA")
-print("AAAA22222")
+##1006
+##1007
+##1008
+##1009
+##1010
+##1011
