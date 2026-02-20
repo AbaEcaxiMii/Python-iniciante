@@ -124,25 +124,22 @@ print(f"{litros:.3f}")
 
 N = int(input())
 
-valor = N
-
 notas = [100, 50, 20, 10, 5, 2, 1]
 
-# Mostrar o valor lido
-print(valor)
+print(N)
 
 for nota in notas:
-    quantidade = N // nota  # Divisão com todos no grupo
+    quantidade = N // nota
     print(f"{quantidade} nota(s) de R$ {nota},00")
-    N = N % nota  # Atualiza o N pras outras divisões
+    N = N % nota  # Atualiza o N pras outras divisões (é o resto)
 
 ##1019
 N = int(input())
 
 horas = N // 3600           # 1 hora = 3600 segundos
-resto = N % 3600            # O que sobra após tirar as horas
+resto = N % 3600            # O que "sobra" das horas
 minutos = resto // 60       # 1 minuto = 60 segundos
-segundos = resto % 60       # O que sobra após tirar os minutos
+segundos = resto % 60       # O que "sobra" dos minutos
 
 print(f"{horas}:{minutos}:{segundos}")
 
@@ -162,10 +159,10 @@ print(f"{dias} dia(s)")
 
 valor = float(input())
 
-# Converter para centavos para evitar problemas com ponto flutuante
+# Converter para centavos para evitar problemas com float
 centavos = int(round(valor * 100))
 
-# Notas e moedas em centavos
+# Notas e moedas em ->centavos<-
 notas_moedas = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]
 nomes = [
     "nota(s) de R$ 100.00",
@@ -247,5 +244,108 @@ else:
     print("Fora de intervalo")
 
 ##1038
+lista=[0, 4, 4.5, 5, 2, 1.5]
+lista_valores=[float(i) for i in lista]
+
+a, b= input().split()
+a=int(a)
+b=int(b)
+
+total= lista_valores[a]*b 
+
+print(f"Total: R$ {total:.2f}")
 
 ##1040
+n1, n2, n3, n4 = map(float, input().split())
+media = (n1 * 2 + n2 * 3 + n3 * 4 + n4 * 1) / 10
+exame=0
+
+print(f"Media: {media:.1f}")
+if media>=7:
+    print("Aluno aprovado.")
+elif media<5:
+    print("Aluno reprovado.")
+elif media>=5 and media<7:
+    print("Aluno em exame.")
+    nota_exame=float(input())
+    print(f"Nota do exame: {nota_exame:.1f}")
+    media= (nota_exame+media)/2
+    if media>=5:
+        print("Aluno aprovado.")
+    elif media<5:
+        print("Aluno reprovado.")
+    print(f"Media final: {media:.1f}")
+
+##1041
+x,y= map(float, input().split())
+
+res="Origem"
+
+if x ==0 and y == 0:
+    res="Origem"
+elif x==0:
+    res="Eixo Y"
+elif y==0:
+    res="Eixo X"
+elif x>0 and y>0:
+    res="Q1"
+elif x<0 and y>0:
+    res="Q2"
+elif x<0 and y<0:
+    res="Q3"
+elif x>0 and y<0:
+    res="Q4"
+
+print(res)
+
+##1042
+entrada=input()
+lista=[int(i) for i in entrada.split()]
+lista_nova= sorted(lista)
+
+for i in lista_nova:
+    print(i)
+
+print()
+
+for i in lista:
+    print(i)
+
+##1043
+def eh_triangulo(a, b, c):
+    # Condição de existência de um triângulo
+    if (a + b > c) and (a + c > b) and (b + c > a):
+        return True
+    else:
+        return False
+
+
+a, b, c= map(float, input().split())
+
+if eh_triangulo(a, b, c):
+    res=a+b+c
+    print(f"Perimetro = {res:.1f}")
+else:
+    res=((a+b)*c)/2
+    print(f"Area = {res:.1f}")
+
+
+##1044
+##1045
+##1046
+##1047
+##1048
+##1049
+##1050
+##1051
+##1052
+##1060
+##1061
+##1064
+##1065
+##1066
+##1067
+##1070
+##1071
+##1072
+##1073
