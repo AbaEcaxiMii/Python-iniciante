@@ -195,8 +195,57 @@ for i in range(6, 12):  # Últimas 6 são moedas
     centavos = centavos % notas_moedas[i]
 
 ##1035
+a,b,c,d=input().split()
+a=int(a)
+b=int(b)
+c=int(c)
+d=int(d)
+
+check=0
+
+if (b>c) and (d>a) and (c+d>a+b) and (c>0) and (d>0) and (a%2==0): check=1
+
+if check:
+    print("Valores aceitos")
+else:
+    print("Valores nao aceitos")
+
 ##1036
+a, b, c=input().split()
+a=float(a)
+b=float(b)
+c=float(c)
+
+from math import sqrt
+
+delta=(b**2)-4*a*c
+
+if a==0 or delta<0:
+    print(f"Impossivel calcular")
+else:
+
+    x1=(-b+sqrt(delta))/(2*a)
+    x2=(-b-sqrt(delta))/(2*a)
+
+    print(f"R1 = {x1:.5f}")
+    print(f"R2 = {x2:.5f}")
+
+
 ##1037
+
+a = float(input())
+
+if a >= 0 and a <= 25:
+    print("Intervalo [0,25]")
+elif a > 25 and a <= 50:
+    print("Intervalo (25,50]")
+elif a > 50 and a <= 75:
+    print("Intervalo (50,75]")
+elif a > 75 and a <= 100:
+    print("Intervalo (75,100]")
+else:
+    print("Fora de intervalo")
+
 ##1038
 
 ##1040
