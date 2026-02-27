@@ -495,16 +495,308 @@ else:
     print(f"R$ {imposto:.2f}")
 
 ##1052
+a=int(input())
+
+match a:
+    case 1:
+        print("January")
+    case 2:
+        print("February")
+    case 3:
+        print("March")
+    case 4:
+        print("April")
+    case 5:
+        print("May")
+    case 6:
+        print("June")
+    case 7:
+        print("July")
+    case 8:
+        print("August")
+    case 9:
+        print("September")
+    case 10:
+        print("October")
+    case 11:
+        print("November")
+    case 12:
+        print("December")
+
+##1059
+
+a=0
+
+while a<100:
+    a+=1
+    if a % 2 == 0:
+        print(a)
+
 ##1060
+
+a=float(input())
+b=float(input())
+c=float(input())
+d=float(input())
+e=float(input())
+f=float(input())
+quanti=0
+
+numeros= [a, b, c, d, e, f]
+
+for num in numeros:
+    if num >0:
+        quanti+=1
+
+print(f"{quanti} valores positivos")
+
 ##1061
+
+dia_i = int(input().split()[1])
+hh_i, mm_i, ss_i = map(int, input().split(" : "))
+
+dia_f = int(input().split()[1])
+hh_f, mm_f, ss_f = map(int, input().split(" : "))
+    
+# Converter pra segundos
+i_ss = dia_i * 86400 + hh_i * 3600 + mm_i * 60 + ss_i
+f_ss = dia_f * 86400 + hh_f * 3600 + mm_f * 60 + ss_f
+    
+diferenca_ss = f_ss - i_ss
+    
+dias = diferenca_ss // 86400
+diferenca_ss %= 86400
+    
+horas = diferenca_ss // 3600
+diferenca_ss %= 3600
+
+minutos = diferenca_ss // 60
+segundos = diferenca_ss % 60
+    
+print(f"{dias} dia(s)")
+print(f"{horas} hora(s)")
+print(f"{minutos} minuto(s)")
+print(f"{segundos} segundo(s)")
+
 ##1064
+
+a=float(input())
+b=float(input())
+c=float(input())
+d=float(input())
+e=float(input())
+f=float(input())
+
+quanti=0
+soma_positivo=0
+
+numeros= [a, b, c, d, e, f]
+
+for num in numeros:
+    if num >0:
+        quanti+=1
+        soma_positivo+=num
+
+media= soma_positivo/quanti
+
+print(f"{quanti} valores positivos")
+print(f"{media:.1f}")
+
 ##1065
+
+a=float(input())
+b=float(input())
+c=float(input())
+d=float(input())
+e=float(input())
+
+quanti=0
+
+numeros= [a, b, c, d, e]
+
+for num in numeros:
+    if num%2==0:
+        quanti+=1
+
+print(f"{quanti} valores pares")
+
+
 ##1066
+
+a=int(input())
+b=int(input())
+c=int(input())
+d=int(input())
+e=int(input())
+
+quanti_par=0
+quanti_imp=0
+quanti_pos=0
+quanti_neg=0
+
+numeros= [a, b, c, d, e]
+
+for num in numeros:
+    if num%2==0:
+        quanti_par+=1
+    elif num%2==1:
+        quanti_imp+=1
+    
+    if num>0:
+        quanti_pos+=1
+    elif num<0:
+        quanti_neg+=1
+
+print(f"{quanti_par} valor(es) par(es)")
+print(f"{quanti_imp} valor(es) impar(es)")
+print(f"{quanti_pos} valor(es) positivo(s)")
+print(f"{quanti_neg} valor(es) negativo(s)")
+
+
 ##1067
+a=int(input())
+
+for i in range (1,a+1):
+    if i%2==1:
+        print(i)
+
 ##1070
+a=int(input())
+
+for i in range (a,a+12):
+    if i%2==1:
+        print(i)
+
 ##1071
+a=int(input())
+b=int(input())
+
+soma=0
+lim_i=a
+lim_f=b
+
+if a>b:
+    lim_i=b
+    lim_f=a
+
+for i in range (lim_i+1,lim_f):
+    if i%2==1:
+        soma+=i
+        
+print(soma)
+
 ##1072
+
+n=int(input())
+
+inside=0
+outside=0
+
+for i in range(n):
+    x=int(input())
+    
+    if 20>=x>=10:
+        inside+=1
+    else:
+        outside+=1
+
+print(f"{inside} in")        
+print(f"{outside} out")        
+
 ##1073
+
+n=int(input())
+
+for i in range(1,n+1):
+    if i%2==0:
+        a=i**2
+        print(f"{i}^2 = {a}")
+
+##1074
+n=int(input())
+text=""
+for i in range(n):
+    x=int(input())
+    
+    if x==0:
+        text="NULL"
+        print(text)
+    else:
+        if x%2==0:
+            text="EVEN"
+        else:
+            text="ODD"
+        
+        if x>0:
+            text += " POSITIVE"
+        else:
+            text += " NEGATIVE"
+
+        print(text)
+
+##1075
+n=int(input())
+
+for i in range(10001):
+    if i%n==2:
+        print(i)
+##1078
+n=int(input())
+
+for i in range(1, 11):
+    x=i*n
+    print(f"{i} x {n} = {x}")
+
+##1079
+
+n=int(input())
+
+for i in range(n):
+    x = input().split()
+    a = float(x[0])
+    b = float(x[1])
+    c = float(x[2])
+    
+    media = (a * 2 + b * 3 + c * 5) / (2 + 3 + 5)
+    print(f"{media:.1f}")
+
+##1080
+
+bigger_num=0
+pos=0
+for i in range(100):
+    n=int(input())
+    if n>bigger_num:
+        bigger_num=n
+        pos=i+1
+
+print(bigger_num)
+print(pos)
+
+##1094
+##1095
+##1096
+##1097
+##1098
+##1099
+##1101
+##1113
+##1114
+##1115
+##1116
+##1117
+##1118
+##1131
+##1132
+##1133
+##1134
+##1142
+##1143
+##1144
+
+
+
+
 
 
 
