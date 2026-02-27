@@ -331,13 +331,169 @@ else:
 
 
 ##1044
+
+a, b = map(int, input().split())
+
+if a % b == 0 or b % a == 0:
+    print("Sao Multiplos")
+else:
+    print("Nao sao Multiplos")
+
 ##1045
+
+a, b, c = map(float, input().split())
+lista=[a,b,c]
+lista_nova=sorted(lista, reverse=True)
+a=lista_nova[0]
+b=lista_nova[1]
+c=lista_nova[2]
+
+if a>=b+c:
+    print("NAO FORMA TRIANGULO")
+elif a**2==b**2+c**2:
+    print("TRIANGULO RETANGULO")
+elif a**2>b**2+c**2:
+    print("TRIANGULO OBTUSANGULO")
+elif a**2<b**2+c**2:
+    print("TRIANGULO ACUTANGULO")
+
+if a==b==c:
+    print("TRIANGULO EQUILATERO")
+elif a==b!=c or a==c!=b or b==c!=a:
+    print("TRIANGULO ISOSCELES")
+
 ##1046
+
+a, b= map(int,input().split())
+
+if a < b:
+    horas = b - a #a está dentro do b, então é só tirar essa parte
+else:
+    horas = (24 - a) + b ##Resto do dia passado mais as horas do novo dia
+    
+print(f"O JOGO DUROU {horas} HORA(S)")
+
 ##1047
+hora_i, min_i, hora_f, min_f= map(int,input().split())
+
+horas=0
+minutos=0
+#converte tudo em minutos
+inicio = hora_i * 60 + min_i
+fim = hora_f * 60 + min_f
+
+if fim > inicio:
+    duracao = fim - inicio 
+elif fim < inicio:
+    duracao = (24 * 60 - inicio) + fim
+else:
+    duracao = 24 * 60 #passou exatamente um dia
+
+horas = duracao // 60
+minutos = duracao % 60
+
+print(f"O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)")
+
 ##1048
+sala=float(input())
+per=0
+
+if 400>=sala>0:
+    per=15
+elif 800>=sala>400:
+    per=12
+elif 1200>=sala>800:
+    per=10
+elif 2000>=sala>1200:
+    per=7
+elif sala>2000:
+    per=4
+
+sala_novo= sala+(sala*per/100)
+reajuste= sala_novo-sala
+
+print(f"Novo salario: {sala_novo:.2f}")
+print(f"Reajuste ganho: {reajuste:.2f}")
+print(f"Em percentual: {per} %")
+
 ##1049
+a=input()
+b=input()
+c=input()
+animal="0"
+if a=="vertebrado":
+    if b=="ave":
+        if c=="carnivoro":
+            animal="aguia"
+        else:
+            animal="pomba"
+    elif b=="mamifero":
+        if c=="onivoro":
+            animal="homem"
+        else:
+            animal="vaca"
+
+elif a=="invertebrado":
+    if b=="inseto":
+        if c=="hematofago":
+            animal="pulga"
+        else:
+            animal="lagarta"
+    elif b=="anelideo":
+        if c=="hematofago":
+            animal="sanguessuga"
+        else:
+            animal="minhoca"
+            
+print(animal)
+
 ##1050
+a=int(input())
+name="DDD nao cadastrado"
+match a:
+    case 61:
+        name="Brasilia"
+    case 71:
+        name="Salvador"
+    case 11:
+        name="Sao Paulo"
+    case 21:
+        name="Rio de Janeiro"
+    case 32:
+        name="Juiz de Fora"
+    case 19:
+        name="Campinas"
+    case 27:
+        name="Vitoria"
+    case 31:
+        name="Belo Horizonte"
+
+print(f"{name}")
+
 ##1051
+
+salario = float(input())
+
+if salario <= 2000:
+    print("Isento")
+else:
+    imposto = 0
+    if salario > 2000:
+        faixa8 = min(salario, 3000) - 2000.00 #resto, exemplo: mim(2002,3000) -> 2002-2000=2
+        if faixa8 > 0: #Não tem como cobrar imposto se não tem resto
+            imposto += faixa8 * 0.08
+    
+    if salario > 3000:
+        faixa18 = min(salario, 4500) - 3000
+        if faixa18 > 0:
+            imposto += faixa18 * 0.18
+    
+    if salario > 4500:
+        faixa28 = salario - 4500
+        imposto += faixa28 * 0.28
+    
+    print(f"R$ {imposto:.2f}")
+
 ##1052
 ##1060
 ##1061
@@ -349,3 +505,6 @@ else:
 ##1071
 ##1072
 ##1073
+
+
+
